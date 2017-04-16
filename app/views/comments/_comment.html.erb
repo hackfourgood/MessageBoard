@@ -1,0 +1,13 @@
+<div class="comment">
+<p class="comment-content"><%= comment.content %></p>
+<p class="comment-posted-by">Posted by <%= comment.user.email%> <%= time_ago_in_words(comment.created_at) %></p>
+
+  <div class="links">
+    <% if user_signed_in? %>
+    <%if comment.user_id == current_user %>
+      <%= link_to "Edit Comment", edit_message_comment_path(comment.message, comment) %>
+      <%= button_to "Delete Comment", message_comment_path(comment.message, comment), method: :delete %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
