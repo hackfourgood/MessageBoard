@@ -10,7 +10,7 @@
 <h4 class="reply-to-msg">Reply to Message:</h4>
 <%= render 'comments/form' %>
 <div class="links btn-group">
-  <%= link_to "Board", root_path, class: "btn btn-default" %>
+  <%= link_to "Home", root_path, class: "btn btn-default" %>
 
 <% if user_signed_in? %>
   <% if @message.user_id == current_user.id %>
